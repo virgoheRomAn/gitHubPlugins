@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="no"/>
+    <meta name="wap-font-scale" content="no">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>jBox操作文档</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/animate.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="css/jBox.min.css">
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight" id="closeBox" style="position: relative; z-index: 10;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox-content">
+                    <h3 class="m-b-xxs">
+                        <a href="javascript:;" class="btn btn-outline btn-info" id="closeThis">关闭当前弹出框</a>
+                        <a href="javascript:;" class="btn btn-outline btn-warning" id="closeAll">关闭所有弹出框</a>
+                        <a href="javascript:;" class="btn btn-outline btn-danger" id="closeAssign">关闭指定弹出框</a>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>PC版本模式-<code>showType:"PC"</code></h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <p>文本提示框（白色带遮罩）-<code>showNumber:1</code></p>
+                        <p class="m-t-lg">
+                            <a href="javascript:;" class="btn btn-w-m btn-primary" id="alert">文本提示框</a>
+                            <a href="javascript:;" class="btn btn-w-m btn-success" id="success">成功弹出框</a>
+                            <a href="javascript:;" class="btn btn-w-m btn-danger" id="danger">错误弹出框</a>
+                            <a href="javascript:;" class="btn btn-w-m btn-warning" id="waring">警告弹出框</a>
+                            <a href="javascript:;" class="btn btn-w-m btn-info" id="loading">loading弹出框</a>
+                        </p>
+                        <p class="m-t-lg">
+                            <a href="javascript:;" class="btn btn-w-m btn-primary" id="confirmJJ">极简弹出框</a>
+                            <a href="javascript:;" class="btn btn-w-m btn-primary" id="confirmJD">简单弹出框</a>
+                            <a href="javascript:;" class="btn btn-w-m btn-primary" id="confirmBZ">标准弹出框</a>
+                            <a href="javascript:;" class="btn btn-w-m btn-primary" id="confirmZDY">自定义弹出框</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>参数配置</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form method="get" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">普通</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">带说明信息</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control"> <span class="help-block m-b-none">帮助文本，可能会超过一行，以块级元素显示</span>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">密码</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="password" class="form-control" name="password">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">提示</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" placeholder="提示信息" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">禁用</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" disabled="" placeholder="已被禁用" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">静态控制</label>
+
+                                            <div class="col-sm-10">
+                                                <p class="form-control-static">i@zi-han.net</p>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">复选框&amp;单选框
+                                                <br>
+                                                <small class="text-navy">普通Bootstrap元素</small>
+                                            </label>
+
+                                            <div class="col-sm-10">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="">选项1</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">选项1</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios">选项2</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内联复选框</label>
+
+                                            <div class="col-sm-10">
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option1" id="inlineCheckbox1">a</label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option2" id="inlineCheckbox2">b</label>
+                                                <label class="checkbox-inline">
+                                                    <input type="checkbox" value="option3" id="inlineCheckbox3">c</label>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">复选框&amp;单选框
+                                                <br><small class="text-navy">自定义样式</small>
+                                            </label>
+
+                                            <div class="col-sm-10">
+                                                <div class="checkbox i-checks">
+                                                    <label>
+                                                        <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项1</label>
+                                                </div>
+                                                <div class="checkbox i-checks">
+                                                    <label>
+                                                        <div class="icheckbox_square-green checked" style="position: relative;"><input type="checkbox" value="" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项2（选中）</label>
+                                                </div>
+                                                <div class="checkbox i-checks">
+                                                    <label>
+                                                        <div class="icheckbox_square-green checked disabled" style="position: relative;"><input type="checkbox" value="" disabled="" checked="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项3（选中并禁用）</label>
+                                                </div>
+                                                <div class="checkbox i-checks">
+                                                    <label>
+                                                        <div class="icheckbox_square-green disabled" style="position: relative;"><input type="checkbox" value="" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项4（禁用）</label>
+                                                </div>
+                                                <div class="radio i-checks">
+                                                    <label>
+                                                        <div class="iradio_square-green" style="position: relative;"><input type="radio" value="option1" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项1</label>
+                                                </div>
+                                                <div class="radio i-checks">
+                                                    <label class="">
+                                                        <div class="iradio_square-green checked" style="position: relative;"><input type="radio" checked="" value="option2" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项2（选中）</label>
+                                                </div>
+                                                <div class="radio i-checks">
+                                                    <label>
+                                                        <div class="iradio_square-green checked disabled" style="position: relative;"><input type="radio" disabled="" checked="" value="option2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项3（选中并禁用）</label>
+                                                </div>
+                                                <div class="radio i-checks">
+                                                    <label>
+                                                        <div class="iradio_square-green disabled" style="position: relative;"><input type="radio" disabled="" name="a" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div> <i></i> 选项4（禁用）</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">内联复选框</label>
+
+                                            <div class="col-sm-10">
+                                                <label class="checkbox-inline i-checks">
+                                                    <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option1" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>a</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option2" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>b</label>
+                                                <label class="checkbox-inline i-checks">
+                                                    <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" value="option3" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>c</label>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Select</label>
+
+                                            <div class="col-sm-10">
+                                                <select class="form-control m-b" name="account">
+                                                    <option>选项 1</option>
+                                                    <option>选项 2</option>
+                                                    <option>选项 3</option>
+                                                    <option>选项 4</option>
+                                                </select>
+
+                                                <div class="col-sm-4 m-l-n">
+                                                    <select class="form-control" multiple="">
+                                                        <option>选项 1</option>
+                                                        <option>选项 2</option>
+                                                        <option>选项 3</option>
+                                                        <option>选项 4</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group has-success">
+                                            <label class="col-sm-2 control-label">验证通过</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group has-warning">
+                                            <label class="col-sm-2 control-label">未填写</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group has-error">
+                                            <label class="col-sm-2 control-label">验证未通过</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">自定义尺寸</label>
+
+                                            <div class="col-sm-10">
+                                                <input type="text" placeholder=".input-lg" class="form-control input-lg m-b">
+                                                <input type="text" placeholder="Default input" class="form-control m-b">
+                                                <input type="text" placeholder=".input-sm" class="form-control input-sm">
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">列尺寸</label>
+
+                                            <div class="col-sm-10">
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <input type="text" placeholder=".col-md-2" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <input type="text" placeholder=".col-md-3" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <input type="text" placeholder=".col-md-4" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">文本框组</label>
+
+                                            <div class="col-sm-10">
+                                                <div class="input-group m-b"><span class="input-group-addon">@</span>
+                                                    <input type="text" placeholder="用户名" class="form-control">
+                                                </div>
+                                                <div class="input-group m-b">
+                                                    <input type="text" class="form-control"> <span class="input-group-addon">.00</span>
+                                                </div>
+                                                <div class="input-group m-b"><span class="input-group-addon">¥</span>
+                                                    <input type="text" class="form-control"> <span class="input-group-addon">.00</span>
+                                                </div>
+                                                <div class="input-group m-b"><span class="input-group-addon"> <input type="checkbox"> </span>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="input-group"><span class="input-group-addon"> <input type="radio"> </span>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">按钮插件</label>
+
+                                            <div class="col-sm-10">
+                                                <div class="input-group m-b"><span class="input-group-btn">
+                                            <button type="button" class="btn btn-primary">搜</button> </span>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-primary">搜索
+                                        </button> </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">带下拉框</label>
+
+                                            <div class="col-sm-10">
+                                                <div class="input-group m-b">
+                                                    <div class="input-group-btn">
+                                                        <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button" aria-expanded="false">操作 <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="form_basic.html#">选项1</a>
+                                                            </li>
+                                                            <li><a href="form_basic.html#">选项2</a>
+                                                            </li>
+                                                            <li><a href="form_basic.html#">选项3</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="form_basic.html#">选项4</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+
+                                                    <div class="input-group-btn">
+                                                        <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">操作 <span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            <li><a href="form_basic.html#">选项1</a>
+                                                            </li>
+                                                            <li><a href="form_basic.html#">选项2</a>
+                                                            </li>
+                                                            <li><a href="form_basic.html#">选项3</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="form_basic.html#">选项4</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">分段</label>
+
+                                            <div class="col-sm-10">
+                                                <div class="input-group m-b">
+                                                    <div class="input-group-btn">
+                                                        <button tabindex="-1" class="btn btn-white" type="button">操作</button>
+                                                        <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button" aria-expanded="false"><span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a href="form_basic.html#">选项1</a>
+                                                            </li>
+                                                            <li><a href="form_basic.html#">选项2</a>
+                                                            </li>
+                                                            <li><a href="form_basic.html#">选项3</a>
+                                                            </li>
+                                                            <li class="divider"></li>
+                                                            <li><a href="form_basic.html#">选项4</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control">
+
+                                                    <div class="input-group-btn">
+                                                        <button tabindex="-1" class="btn btn-white" type="button">操作</button>
+                                                        <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu pull-right">
+                                                            分段
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hr-line-dashed"></div>
+                                        <div class="form-group">
+                                            <div class="col-sm-4 col-sm-offset-2">
+                                                <button class="btn btn-primary" type="submit">保存内容</button>
+                                                <button class="btn btn-white" type="submit">取消</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-2">
+                                            <p>弹窗模式：<code>type</code></p>
+                                            <select class="form-control m-b" name="account">
+                                                <option value="pc" selected>PC版本</option>
+                                                <option value="h5">H5版本</option>
+                                            </select>
+                                            <div class="code">
+                                                <span class="simple_tag">type:<code>pc</code></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p>显示模式：<code>showNumber</code></p>
+                                            <select class="form-control m-b" name="account">
+                                                <option selected>显示模式</option>
+                                                <option value="0">透明遮罩半透明黑色</option>
+                                                <option value="1">半透明黑色遮罩，白色内容</option>
+                                                <option value="2">透明遮罩，白色内容</option>
+                                                <option value="3">没有遮罩，白色内容</option>
+                                                <option value="4">没有遮罩，半透明黑色</option>
+                                            </select>
+                                            <div class="code">
+                                                <span class="simple_tag">showNumber:<code>null</code></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <p>支持动画样式：<code>animate.min.css</code></p>
+                                            <select class="form-control m-b" name="account">
+                                                <option value="jBox-scale" selected>jBox-scale动画</option>
+                                                <option value=" jBox-shake"> jBox-shake动画</option>
+                                                <option value="jBox-scale-show">jBox-scale-show动画</option>
+                                            </select>
+                                            <div class="code">
+                                                <span class="simple_tag">animateCls:<code>"jBox-scale"</code></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <p>距离：<code>top</code></p>
+                                            <select class="form-control m-b" name="account">
+                                                <option value="auto" selected>垂直居中</option>
+                                                <option value="10%">10%</option>
+                                                <option value="20%">20%</option>
+                                                <option value="30%">30%</option>
+                                                <option value="40%">40%</option>
+                                            </select>
+                                            <div class="code">
+                                                <span class="simple_tag">top:<code>"auto"</code></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <p>阴影：<code>shadowType</code></p>
+                                            <select class="form-control m-b" name="account">
+                                                <option value="" selected>自动适配</option>
+                                                <option value="shadow">含有阴影</option>
+                                                <option value="none">不含有阴影</option>
+                                            </select>
+                                            <div class="code">
+                                                <span class="simple_tag">shadowType:<code>""</code></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="m-t-lg"><a href="javascript:;" class="btn btn-w-m btn-primary"
+                                                         id="showBox">显示弹窗</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <p class="m-t-lg">代码预览：</p>
+                            <pre class="jBoxCode">
+    $.jBox.<span>alert</span>("<span>这是个简单弹窗！</span>",{
+        <span></span>
+    });
+                                </pre>
+                        </div>
+                        <div class="form-group">
+                            <p class="m-t-lg">参数预览：</p>
+                            <pre>{
+   type: "PC",     //模式：默认：PC，可选：H5
+    /**
+    * 展示模式：showNumber
+    * 0-透明遮罩半透明黑色
+    * 1-半透明黑色遮罩，白色内容
+    * 2-透明遮罩，白色内容
+    * 3-没有遮罩，白色内容
+    * 4-没有遮罩，半透明黑色
+    */
+    showNumber: "",
+    top: "auto",    //距离：默认："auto"，可选：number数字
+    title: "",  //弹出框提示信息标题
+    skin: "",     //弹出框皮肤
+    isCloseBtn: false, //是否包含关闭按钮
+    shadowType: "",   //是否阴影模式：默认：shadow，可选：none
+    animateCls: "jBox-scale",  //动画样式
+    hasIcon: false, //是否启用图标-针对确认框
+    iconLoad: true,     //图标预加载-只可以外部设置
+    closeTime: 1000,    //关闭时间-延迟时间关闭弹出框，适用-弹出提示
+    closeType: 1,    //关闭选项：默认：1-自动延时关闭（弹出提示），2-触发关闭（非自动关闭，没有延时），3-不关闭，手动调用函数关闭
+    confirmType: 2,
+
+    //弹出框-结构
+    element: {
+        cls: "",
+        width: "auto",
+        height: "auto",
+        max_width: "800px",
+        min_width: "400px"
+    },
+
+    //按钮选项
+    btn: {
+        btnDir: "h",   //按钮排列方式：默认：h，可选：v
+        cls: "",    //按钮公用样式名称
+        css: "",    //按钮公用样式
+        array: []   //按钮数组包含{href，id，cls，css，callback}
+    }.
+
+    //图标选项
+    icon: {
+        iconType: "img",    //图标模式：默认："img"-图片默认，可选："font"-字体模式，"none"-不使用图标
+        iconDir: "h",       //图标显示模式：默认：h，可选：v
+        width: "32px",
+        height: "32px",
+        font: "",   //当模式为："font"时，需要出入font对应的字体图标
+        path: "img/jBox/",
+        src: "",
+        id: ""  //当前图片的标识
+    },
+
+    //样式名称
+    cls: {
+        titleCls: "",
+        contCls: "",
+        btnCls: ""
+    },
+
+    //css样式
+    css: {
+        titleCSS: {},
+        closeCSS: {},
+        titleTextCSS: {},
+        contCSS: {},
+        introCSS: {},
+        introContCSS: {},
+        iconCSS: {},
+        btnCSS: {}
+    },
+
+    //回掉函数
+    initFun: null,
+    initBeforeFun: null,
+    initAfterFun: null,
+    ensureFun: null,
+    cancelFun: null,
+    closeFun: null
+}
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 全局js -->
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/jquery-ui-1.10.4.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+
+<!-- 自定义js -->
+<script src="../../js/content.js"></script>
+<script src="js/jQuery.jBox.js"></script>
+<script>
+    $(function () {
+        $.jBox.configFun({
+            //showNumber: 4,
+            icon: {
+                //iconDir: "v"
+            }
+        });
+
+        $("#alert").click(function () {
+            $.jBox.alert("你好，这是个简单的提示框");
+        });
+
+        $("#success").click(function () {
+            $.jBox.success("你好，这是个成功的提示框");
+        });
+
+        $("#danger").click(function () {
+            $.jBox.error("你好，这是个失败Error的提示框");
+        });
+
+        $("#waring").click(function () {
+            $.jBox.waring("你好，这是个警告Waring的提示框", {
+                icon: {
+                    iconType: "font",
+                    font: "icon-waring-line2"
+                }
+            });
+        });
+
+        $("#loading").click(function () {
+            $.jBox.loading("你好，这是个加载Loading提示框", {
+                icon: {
+                    src: "jBox-loading-white.gif",
+                    id: "loadingWhite"
+                }
+            });
+        });
+
+        //确认框-极简
+        $("#confirmJJ").click(function () {
+            $.jBox.confirm("您是否确认退出？", {
+                confirmType: 1,
+                //skin: "blue",
+                title: "操作提示",
+                btn: {
+                    array: [{
+                        text: "确定"
+                    }]
+                }
+            });
+        });
+        //确认框-简单
+        $("#confirmJD").click(function () {
+            $.jBox.confirm("您是否确认退出？", {
+                confirmType: 2,
+                //skin: "blue",
+                title: "操作提示",
+                hasIcon: true,
+                btn: {
+                    number: 1,
+                    array: [{
+                        text: "确定"
+                    }, {
+                        text: "取消"
+                    }]
+                }
+            });
+        });
+        //确认框-标准
+        $("#confirmBZ").click(function () {
+            $.jBox.confirm("<span id='aaa'>您是否确认退出？</span>", {
+                confirmType: 3,
+                skin: "green",
+                title: "操作提示",
+                hasIcon: true,
+                icon: {
+                    id: "success"
+                },
+                btn: {
+                    array: [{
+                        text: "确定",
+                        closeType: 3,
+                        callback: function (opt) {
+                            var id = opt.thisID;
+                            $.jBox.loading("退出操作中...", {boxID: "tipsLoad"});
+                            setTimeout(function () {
+                                $.jBox.close("#tipsLoad", null, function () {
+                                    $.jBox.success("退出成功！", {
+                                        closeFun: function () {
+                                            $.jBox.close($("#" + id));
+                                        }
+                                    });
+                                });
+                            }, 1000);
+                        }
+                    }, {
+                        text: "取消"
+                    }]
+                }
+            });
+        });
+
+        //关闭
+        $("#closeAssign").click(function () {
+            //$.jBox.close("#thisLoad");
+        });
+        $("#closeThis").click(function () {
+            $.jBox.close();
+        });
+        $("#closeAll").click(function () {
+            $.jBox.close(false, true);
+        });
+    })
+</script>
+</body>
+</html>
